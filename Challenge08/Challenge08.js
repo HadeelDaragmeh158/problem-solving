@@ -23,22 +23,24 @@
 //
 // the string format is "Customer Name :*** *** , Age :**"
 // ['Customer Name :Romio Joliat , Age :35', 'Customer Name :Mario Ristrova , Age :39', ... ]
-
+ 
 // -------------------------------------------------------------------------------------------------------
 
 const customerAndAge = (obj) => {
 // write your code here
-customerAndAge.name[0]='Romio Joliat';
-customerAndAge.age[0]=35;
-customerAndAge.name[1]='Mario Ristrova';
-customerAndAge.age[1]=39;
-customerAndAge.name[2]='Sofia firnando';
-customerAndAge.age[2]=50;
+// customerAndAge.name[0]='Romio Joliat';
+// customerAndAge.age[0]=35;
+// customerAndAge.name[1]='Mario Ristrova';
+// customerAndAge.age[1]=39;
+// customerAndAge.name[2]='Sofia firnando';
+// customerAndAge.age[2]=50;
 var SFArr=[];
-for (var i =0;i<3;i++)
-{
-    SFArr=[`Customer Name :${name[i]} , Age : ${age[i]}`];
-}
+for(let val in obj )
+   {
+    SFArr.push(  `Customer Name :${val} , Age :${obj[val]}`)
+  };
+
+return SFArr;
 }
 
 // -------------------------------------------------------------------------------------------------------
@@ -66,6 +68,13 @@ for (var i =0;i<3;i++)
 
 const getEntries = (obj) => {
   // write your code here
+  let arr =[]
+  let i=0 
+  for (const property in obj) {
+  arr[i]=(`${property}: ${obj[property]}`);
+  i++;
+}
+return arr ;
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -73,7 +82,7 @@ const getEntries = (obj) => {
 
 // Write a function named getCourseName that returns object of 2 new arrays
 // first one is containing the names of all of the courses in the data set.
-// second one is containing the names of all the students
+// second one is containing the names  of all the students
 // -------------------------------------------------------------------------------------------------------
 
 const courses = [
